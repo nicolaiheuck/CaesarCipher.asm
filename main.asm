@@ -70,35 +70,34 @@ _return:
     mov rdi, 0  ; exit code
     syscall
 
-/*
-Decompiled Ghidra result of _encryptString
 
-void _encryptString(void)
-{
-  long string;
-  long i;
-  long string_length;
+; Decompiled Ghidra result of _encryptString
+
+; void _encryptString(void)
+; {
+;   long string;
+;   long i;
+;   long string_length;
   
-  i = 0;
-  do {
-    if (*(long *)(string + i) == L'\n') {
-      return;
-    }
-    *(long *)(string + i) = *(long *)(string + i) + _incrementBy;
-    i = i + 1;
-  } while (i != string_length);
-  return;
-}
+;   i = 0;
+;   do {
+;     if (*(long *)(string + i) == L'\n') {
+;       return;
+;     }
+;     *(long *)(string + i) = *(long *)(string + i) + _incrementBy;
+;     i = i + 1;
+;   } while (i != string_length);
+;   return;
+; }
 
-Cleaned result:
-void _encryptString(void)
-{
-    for (long i = 0; i != string_length; i++) {
-        if (string[i] == '\n') {
-            return;
-        }
+; Cleaned result:
+; void _encryptString(void)
+; {
+;     for (long i = 0; i != string_length; i++) {
+;         if (string[i] == '\n') {
+;             return;
+;         }
 
-        string[i] += _incrementBy;
-    }
-}
-*/
+;         string[i] += _incrementBy;
+;     }
+; }
