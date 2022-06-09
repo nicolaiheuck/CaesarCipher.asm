@@ -10,12 +10,11 @@ cd Own.CaesarCipher.asm
 make run
 ```
 
-## Or try it out in docker
+## Or in docker
 This way you don't have to install any dependencies (except docker)
 ```bash
 git clone https://github.com/nicolaiheuck/Own.CaesarCipher.asm.git
-cd Own.CaesarCipher.asm
-docker build . -t caesar-cipher
+docker build Own.CaesarCipher.asm -t caesar-cipher
 docker run --rm -it caesar-cipher # The container will delete it-self when you exit
 ```
 
